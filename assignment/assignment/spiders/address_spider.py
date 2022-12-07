@@ -2,7 +2,7 @@ import scrapy
 import logging
 import re
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
 
 
 class AddressSpider(scrapy.Spider):
