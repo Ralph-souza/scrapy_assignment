@@ -1,5 +1,9 @@
+import os
 import scrapy
 import logging
+
+dirname = os.path.dirname(__name__)
+filename = os.path.join(dirname, "/scrapy_assignment/assignment")
 
 logger = logging.getLogger(__name__)
 
@@ -18,3 +22,5 @@ class PhoneSpider(scrapy.Spider):
         for phone in search:
             if phone:
                 yield {"phone": phone}
+            else:
+                logger.warning("Unable to scrap website Logo URL")

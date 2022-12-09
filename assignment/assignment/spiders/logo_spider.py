@@ -1,6 +1,10 @@
+import os
 import scrapy
 import logging
 import re
+
+dirname = os.path.dirname(__name__)
+filename = os.path.join(dirname, "/scrapy_assignment/assignment")
 
 logger = logging.getLogger(__name__)
 

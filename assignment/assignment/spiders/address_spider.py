@@ -1,6 +1,10 @@
+import os
 import scrapy
 import logging
 import re
+
+dirname = os.path.dirname(__name__)
+filename = os.path.join(dirname, "/scrapy_assignment/assignment")
 
 logger = logging.getLogger(__name__)
 
@@ -9,7 +13,7 @@ class AddressSpider(scrapy.Spider):
     name = "address"
 
     def start_requests(self):
-        urls = open("/home/ralph/Udemy/scrapy_assignment/url_list.txt")
+        urls = open(filename + "/url_list.txt")
         for address in urls:
             yield scrapy.Request(url=address, callback=self.parse)
 
